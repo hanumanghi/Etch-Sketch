@@ -4,11 +4,16 @@ h1{
 
 #sketch {
     display: grid;
-    width: 300px;
-    height: 300px;
+    width: 420px;
+    height: 420px;
     border: 1px solid black;
 }
 
 .gridCell{
     display: block;
+}
+
+.paint {
+display: flex;
+justify-content: space-around;
 }
