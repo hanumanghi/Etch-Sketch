@@ -1,13 +1,19 @@
-const container = document.getElementById("grid");
-6
-function makeRows (rows, cols){
-    container.style.setProperty('--grid-rows', rows);
-    container.style.setProperty('--grid-cols', cols);
-    for(i = 0; i < rows * cols; i++){
-        let cell = document.createElement("div");
-        cell.innerText = (i + 1);
+const container = document.getElementById("sketch");
+const sketchPad = document.querySelector(".gridCell")
+
+function makeGrid(size){
+    container.style.gridTemplateRows = 'repeat(64, 1fr)';
+    container.style.gridTemplateColumns = 'repeat(64, 1fr)';
+
+    for(i = 0; i < size * size; i++){
+        const cell = document.createElement("div");
         container.appendChild(cell).className = "gridCell";
+        cell.addEventListener('mouseover', draw);
     }
 }
 
-makeRows(16, 16);
+function draw (e){
+    e.target.style.backgroundColor = 'black';
+}
+
+makeGrid(64);
