@@ -6,8 +6,6 @@ const gridSize = document.getElementById("#gridSize")
 const clear = document.querySelector(".clear");
 const artistSelections = document.querySelectorAll('.paint')
 
-artistSelections.forEach (artistSelection => artistSelection.addEventListener('click', tool));
-
 function tool() {
     artistSelections.forEach (artistSelection => artistSelection.addEventListener('click', e =>
     selection = e.target.id))
@@ -20,6 +18,12 @@ function draw(e){
         e.target.style.backgroundColor = 'black';
     } else if (brush == 'erase'){
         e.target.style.backgroundColor = 'white';
+    } else if (brush == 'rainbow'){
+        let letters = '0123456789ABCDEF';
+        let hue = '#';
+        for(let i= 0; i<6; i++)
+        hue += letters[Math.floor(Math.random() * 16)];
+        e.target.style.backgroundColor = hue;
     }
     console.log(brush);
 }
