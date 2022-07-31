@@ -4,22 +4,25 @@ const paintBrush = document.getElementById("#color");
 const eraser = document.getElementById("#erase");
 const gridSize = document.getElementById("#gridSize")
 const clear = document.querySelector(".clear");
-let selection;
+const artistSelections = document.querySelectorAll('.paint')
+
+artistSelections.forEach (artistSelection => artistSelection.addEventListener('click', tool));
+
+function tool() {
+    artistSelections.forEach (artistSelection => artistSelection.addEventListener('click', e =>
+    selection = e.target.id))
+   return selection;
+}
+
 function draw(e){
-    const artistSelections = document.querySelectorAll('.paint')
-    artistSelections.forEach (artistSelection => artistSelection.addEventListener('click', tool));
-    function tool(brush){
-        let selection = brush.target.id;
-    
-    if(selection == 'color'){
+    let brush = tool();
+    if (brush == 'color'){
         e.target.style.backgroundColor = 'black';
-    }else if(selection == 'erase'){
+    } else if (brush == 'erase'){
         e.target.style.backgroundColor = 'white';
     }
-    
-    }
+    console.log(brush);
 }
-console.log(selection)
 
 function makeGrid(size){
     container.style.gridTemplateRows = 'repeat(64, 1fr)';
