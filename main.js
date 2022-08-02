@@ -3,13 +3,14 @@ const sketchPad = document.querySelector(".gridCell");
 const paintBrush = document.getElementById("#color");
 const eraser = document.getElementById("#erase");
 const gridSize = document.getElementById("#gridSize")
+const sizeSlider = document.getElementById("sizeSlider");
 const clear = document.querySelector(".clear");
-const artistSelections = document.querySelectorAll('.paint')
+const artistSelections = document.querySelectorAll('.paint');
 
 function tool() {
     artistSelections.forEach (artistSelection => artistSelection.addEventListener('click', e =>
     selection = e.target.id))
-   return selection;
+    return selection;
 }
 
 function draw(e){
@@ -29,8 +30,8 @@ function draw(e){
 }
 
 function makeGrid(size){
-    container.style.gridTemplateRows = 'repeat(64, 1fr)';
-    container.style.gridTemplateColumns = 'repeat(64, 1fr)';
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
     for(i = 0; i < size * size; i++){
         const cell = document.createElement("div");
@@ -40,9 +41,15 @@ function makeGrid(size){
     }
 }
 
-function refresh(){
-    window.location.reload(true);
+sizeSlider.addEventListener('input',changeGrid);
+
+function changeGrid(){
+    let sliderValue = sizeSlider.value;
+    makeGrid(sliderValue);   
 }
 
-makeGrid(64);
+function refresh(){
+   sketchPad.style.backgroundColor = 'white';
+}
 
+console.log(changeGrid())
