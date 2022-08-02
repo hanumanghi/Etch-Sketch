@@ -31,8 +31,8 @@ padding-bottom: 1em;
 display: flex;
 justify-content: space-around;
  background-color:saddlebrown;
- padding-left: 24em;
- padding-right: 24em;
+ padding-left: 16em;
+ padding-right: 16em;
 }
 
 #gridSize{
@@ -55,11 +55,27 @@ button:hover{
     cursor: pointer;
 }
 
-#colorPicker{
+#color{
+    padding:7px;
+    background-color: saddlebrown;
+}
+
+input[type="color"]{
     -webkit-appearance: none;
     border: none;
-    padding:none;
+    padding: none;
+    background-color: saddlebrown;
     }
+
+input[type="color"]::-webkit-color-swatch{
+    border: none;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+}
+input[type="color"]:hover{
+    transform: scale(1.5);
+}
 
 #rainbow{
     background: linear-gradient(
@@ -93,7 +109,7 @@ button:hover{
     border-radius: 50px;
     border: 5px;
     height: 7px;
-    margin: 9px
+    margin: 9px;
 }
 
 #sizeSlider::-webkit-slider-thumb{

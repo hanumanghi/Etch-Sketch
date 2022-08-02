@@ -23,7 +23,7 @@ function draw(e){
     let brush = tool();
     let colorChoice = changeColor();
    
-    if (brush == 'color'){
+    if (brush == 'colorPicker'){
         e.target.style.backgroundColor = colorChoice;
     } else if (brush == 'erase'){
         e.target.style.backgroundColor = 'white';
