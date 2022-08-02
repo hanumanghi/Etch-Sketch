@@ -1,5 +1,10 @@
 body{
 background-color:chocolate;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 0px;
 }
 
 h1{
@@ -13,6 +18,7 @@ h1{
     border: 1em solid saddlebrown;
     background-color: white;
     margin: 1px;
+   
 }
 
 .gridCell{
@@ -25,6 +31,8 @@ padding-bottom: 1em;
 display: flex;
 justify-content: space-around;
  background-color:saddlebrown;
+ padding-left: 24em;
+ padding-right: 24em;
 }
 
 #gridSize{
@@ -39,6 +47,7 @@ button {
 border-radius: 100%;
 border:none;
 padding: 25px;
+margin: 15px;
 }
 
 button:hover{
@@ -47,10 +56,27 @@ button:hover{
 }
 
 #colorPicker{
+    -webkit-appearance: none;
     border: none;
     padding:none;
     }
-    
+
+#rainbow{
+    background: linear-gradient(
+        135deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
 #erase{
     color: chocolate;
     background-color: white;
@@ -58,6 +84,7 @@ button:hover{
 
 .clear{
     background-color: chocolate;
+    padding: 30px;
 }
 
 #sizeSlider{
