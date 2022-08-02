@@ -27,17 +27,12 @@ justify-content: space-around;
  background-color:saddlebrown;
 }
 
-#colorPicker{
-border: none;
-padding:none;
-}
-
 #gridSize{
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-color: white;
+color: chocolate;
 }
 
 button {
@@ -51,3 +46,33 @@ button:hover{
     cursor: pointer;
 }
 
+#colorPicker{
+    border: none;
+    padding:none;
+    }
+    
+#erase{
+    color: chocolate;
+    background-color: white;
+}
+
+.clear{
+    background-color: chocolate;
+}
+
+#sizeSlider{
+    -webkit-appearance: none;
+    background-color: chocolate;
+    border-radius: 50px;
+    border: 5px;
+    height: 7px;
+    margin: 9px
+}
+
+#sizeSlider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    background-color: rgb(75, 42, 2);
+}
