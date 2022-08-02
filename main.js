@@ -26,7 +26,6 @@ function draw(e){
         hue += letters[Math.floor(Math.random() * 16)];
         e.target.style.backgroundColor = hue;
     }
-    console.log(brush);
 }
 
 function makeGrid(size){
@@ -44,12 +43,13 @@ function makeGrid(size){
 sizeSlider.addEventListener('input',changeGrid);
 
 function changeGrid(){
+    refresh();
     let sliderValue = sizeSlider.value;
     makeGrid(sliderValue);   
 }
 
 function refresh(){
-   sketchPad.style.backgroundColor = 'white';
+   container.innerHTML='';
 }
 
 console.log(changeGrid())
