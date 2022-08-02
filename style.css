@@ -1,3 +1,7 @@
+body{
+background-color:chocolate;
+}
+
 h1{
     text-align: center;
 }
@@ -6,7 +10,9 @@ h1{
     display: grid;
     width: 420px;
     height: 420px;
-    border: 1px solid black;
+    border: 1em solid saddlebrown;
+    background-color: white;
+    margin: 1px;
 }
 
 .gridCell{
@@ -14,6 +20,15 @@ h1{
 }
 
 .paint {
+padding-top: 1em;
+padding-bottom: 1em;
 display: flex;
 justify-content: space-around;
+ background-color:saddlebrown;
+}
+
+button {
+border-radius: 100%;
+border:none;
+padding: 25px;
 }
