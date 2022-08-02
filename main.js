@@ -1,8 +1,6 @@
 const container = document.getElementById("sketch");
-const sketchPad = document.querySelector(".gridCell");
-const paintBrush = document.getElementById("#color");
-const eraser = document.getElementById("#erase");
-const gridSize = document.getElementById("#gridSize")
+const colorPicker = document.getElementById("colorPicker");
+const gridSize = document.getElementById("gridSize")
 const sizeSlider = document.getElementById("sizeSlider");
 const clear = document.querySelector(".clear");
 const artistSelections = document.querySelectorAll('.paint');
@@ -13,10 +11,20 @@ function tool() {
     return selection;
 }
 
+colorPicker.addEventListener('input',changeColor)
+
+function changeColor(e){
+    let colorChange = colorPicker.value;
+    return colorChange;
+}
+
+
 function draw(e){
     let brush = tool();
+    let colorChoice = changeColor();
+   
     if (brush == 'color'){
-        e.target.style.backgroundColor = 'black';
+        e.target.style.backgroundColor = colorChoice;
     } else if (brush == 'erase'){
         e.target.style.backgroundColor = 'white';
     } else if (brush == 'rainbow'){
