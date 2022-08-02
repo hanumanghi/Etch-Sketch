@@ -33,6 +33,8 @@ function draw(e){
         for(let i= 0; i<6; i++)
         hue += letters[Math.floor(Math.random() * 16)];
         e.target.style.backgroundColor = hue;
+    } else {
+        e.target.style.backgroundColor = colorChoice;
     }
 }
 
@@ -49,6 +51,12 @@ function makeGrid(size){
 }
 
 sizeSlider.addEventListener('input',changeGrid);
+const sliderNum = document.getElementById('sliderNum');
+sliderNum.innerHTML = `${sizeSlider.value} X ${sizeSlider.value}`;
+
+sizeSlider.oninput = function(){
+    sliderNum.innerHTML = `${this.value} X ${this.value}`;
+}
 
 function changeGrid(){
     refresh();
