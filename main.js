@@ -36,7 +36,7 @@ function makeGrid(size){
         const cell = document.createElement("div");
         container.appendChild(cell).className = "gridCell";
         cell.addEventListener('mouseover', draw);
-        clear.addEventListener('click', refresh);
+        clear.addEventListener('click', changeGrid);
     }
 }
 
